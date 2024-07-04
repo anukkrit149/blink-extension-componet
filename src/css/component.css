@@ -1,0 +1,25 @@
+.blink-actions {
+  /*animation: blink0 1s infinite;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes blink0 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.blink-actions > button {
+  margin: 0 5px;
+  padding: 5px 18px;
+  border-radius: 30px;
+  color: white;
+}
