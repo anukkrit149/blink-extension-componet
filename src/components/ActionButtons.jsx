@@ -11,6 +11,14 @@ export default function ActionButtons() {
 
     if (wallet && wallet.isConnected) {
       console.log("Wallet connected");
+      const account = wallet.account;
+      const result = await account.execute({
+        contractAddress: data.address,
+        entrypoint: action.selector,
+        calldata: action.data,
+      });
+      console.log(result)
+
     } else {
       console.log("Wallet not connected");
     }
