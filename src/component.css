@@ -1,0 +1,51 @@
+.blink-container {
+	margin: 30px auto;
+	max-width: 690px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 15px;
+  }
+  
+  .blink-header {
+	text-align: center;
+  }
+  
+  .blink-header img {
+	max-width: 300px;
+	object-fit: contain;
+	margin: 15px auto;
+  }
+  
+  .blink-header h1 {
+	font-size: 2rem;
+	font-weight: 600;
+	margin-bottom: 10px;
+  }
+  
+  .blink-header p {
+	color: #666;
+	margin-bottom: 15px;
+  }
+  
+  .blink-actions {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+  }
+  
+  .action-button {
+	margin: 0 5px;
+	padding: 10px 20px;
+	border-radius: 30px;
+	color: white;
+	border: none;
+	cursor: pointer;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .action-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }

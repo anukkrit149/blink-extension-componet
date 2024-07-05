@@ -1,5 +1,5 @@
 import './App.css';
-import BlinkComponent from "./component";
+import BlinkComponent from './components/BlinkComponent';
 
 function App() {
   return (
