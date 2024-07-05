@@ -1,10 +1,28 @@
-import React from "react";
+import {React, useState} from "react";
 import { data } from "./data";
 import "./css/component.css";
+import { connect, disconnect, setConnection,  } from 'starknetkit'
 
 export default function BlinkComponent() {
+	const [showComponent, setShowComponent] = useState(false);
+	const showConnectWallet = () => {
+		setShowComponent(true);
+	};
+
+	const connectWallet = async() => {
+		const { wallet } = await connect();
+
+		if(wallet && wallet.isConnected) {
+			console.log("wallet connected")
+			// setConnection(wallet)
+			// setProvider(wallet.account)
+			// setAddress(wallet.selectedAddress)
+		}
+	}
+
 	return (
 		<div className={"blink-container"}>
+			{/*{showComponent &&}*/}
 			<div className={"blink-header"}>
 				<img src={data.image} alt="Realms DAO Platform" />
 				<h1>{data.title}</h1>
@@ -18,6 +36,7 @@ export default function BlinkComponent() {
 							backgroundColor: action.color,
 							borderColor: action.color,
 						}}
+						onClick={() => 	actionBtnClick(action)}
 					>
 						{action.label}
 					</button>
@@ -26,6 +45,19 @@ export default function BlinkComponent() {
 		</div>
 	);
 }
+
+function actionBtnClick(action) {
+	console.log("action-"+action.label)
+	console.log("action-calldata-"+action.data)
+// 	check for wallet connected or not
+// 	if not connected then connect wallet
+// 	if connected then call starknet with calldata
+// 	if success then show success message
+// 	if failed then show failed message
+	
+	console.log("connect wallet rendered")
+}
+
 
 export function SolanaActionComponent() {
 	return (
